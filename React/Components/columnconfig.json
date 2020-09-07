@@ -1,0 +1,10 @@
+{
+    "id": "ID",
+    "customerId": "Customer ID",
+    "accountId": "Account Information",
+    "paymentTypeId": "Payment Type",
+    "dateCreated": "Date Created",
+    "dateModified": "Date Modified",
+    "createdBy": "Created By",
+    "modifiedBy": "Modified By"
+}

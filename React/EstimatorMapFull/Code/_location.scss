@@ -1,0 +1,314 @@
+$AP-Blue: #0043ff;
+$AP-Infra-red: #fc4575;
+$AP-pink: #fd87a6;
+$AP-red: #fb1350;
+$AP-White: #fff;
+$AP-lightBlue: #1f5aff;
+$tab-selected: #e0ebff;
+$AP-gray: #f6f6f6;
+$AP-black: #000000;
+$AP-gray: #656565;
+$AP-input: #7d7d7d;
+$AP-dg: #3a3f51;
+
+
+
+.location-card-container {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 72%;
+  background-color: white;
+  bottom: 24px;
+  top: 250px;
+  max-width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 16px;
+  left: 90px;
+  max-height: 640px;
+
+  .location-data-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .location-card-header {
+    height: 200px !important;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: $AP-dg;
+    color: white;
+    padding-left: 18px;
+    flex-direction: inherit;
+
+    .location-origin-address {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease ease-in-out;
+
+      .origin-marker {
+        border-radius: 50%;
+        background-color: white;
+        margin-right: 10px;
+        width: 10px;
+        height: 10px;
+      }
+
+      .origin-marker {
+        transform: scale(3);
+        background: white;
+        box-shadow: 0 0 0 0 rgba(52, 172, 224, 1);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(239, 241, 241, 0.7);
+        }
+
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+        }
+
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
+        }
+      }
+    }
+
+    .marker-line {
+      height: 10px;
+    }
+
+    .location-destination-address {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      transition: 0.4s ease-in-out;
+
+      .dest-marker {
+        background-color: white;
+        margin-right: 10px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .location-search {
+    width: 340px;
+    font-size: 16px;
+    height: 34px;
+    background-color: $AP-dg;
+    border: 1px solid $AP-gray;
+    color: white;
+    font-weight: 900;
+    padding: 8px;
+
+    ::placeholder {
+      color: white !important;
+    }
+
+    ::-webkit-input-placeholder {
+      color: black;
+    }
+  }
+
+  .location-card-widget {
+    padding: 16px 16px;
+    display: flex;
+    justify-content: space-between;
+
+    .location-group {
+      width: 140px;
+    }
+  }
+
+  .location-card-body {
+    // padding-top: 10px;
+    // height: 100%
+    // padding-bottom: 90px;
+  }
+
+  ul {
+    padding-left: 0px;
+  }
+
+  .location-list-item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    padding: 11.3px;
+    margin-right: 0px;
+    transition: 0.2s ease-in-out;
+    border-bottom: 1px solid $AP-black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $tab-selected;
+    }
+
+    &:active {
+      background-color: $tab-selected;
+    }
+
+    .location-icon-group {
+      justify-content: center;
+      display: flex;
+      padding: 2px;
+      align-items: center;
+    }
+
+    .location-option-content {
+      width: 230px;
+      font-size: 16px;
+
+      .deliverytype-title {
+        color: black;
+        font-weight: 900;
+        font-size: 16px;
+      }
+    }
+
+    .delivery-price-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .delivery-price {
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+
+  .sign-up-btn-container {
+    height: 80px;
+    padding: 5px;
+
+    .sign-up-btn {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: $AP-dg;
+      color: white;
+      font-size: 24px;
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $AP-Infra-red;
+      }
+    }
+  }
+
+  .loader-container {
+    height: 100%;
+  }
+
+  .location-loader {
+    width: 400px;
+    height: 4px;
+    background: linear-gradient(to right, $AP-lightBlue, $AP-lightBlue);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 4px;
+    background-size: 20%;
+    z-index: 300;
+    background-repeat: repeat-y;
+    background-position: -25% 0;
+    animation: scroll 1.2s ease-in-out infinite;
+  }
+
+  @keyframes scroll {
+    50% {
+      background-size: 80%;
+    }
+
+    100% {
+      background-position: 125% 0;
+    }
+  }
+
+  .loader-padding {
+    height: 4px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    display: none;
+  }
+}
+
+
+
+@media only screen and (max-width: 375px) {
+
+  .location-card-container {
+    max-width: 375px;
+    left: 0px;
+    top: 410px;
+    max-height: 400px;
+
+    .location-card-header {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 8px;
+      height: 100px !important;
+    }
+
+    .location-card-widget {
+      padding: 0px 0px;
+    }
+
+    .location-card-body {
+      padding: none;
+      height: 300px;
+    }
+
+    .location-list-item {
+      height: 50px;
+      padding: 4px
+    }
+
+    .location-icon-group {
+      font-size: 10px;
+    }
+  }
+
+  .location-option-content {
+    font-size: 13px !important;
+  }
+
+  .deliverytype-title {
+    font-size: 13px !important;
+  }
+
+  .sign-up-btn-container {
+    height: 50px !important;
+    margin-top: -20px;
+    background-color: white;
+
+    .sign-up-btn {
+      font-size: 15px !important;
+    }
+  }
+}
+
+.map-container {
+  width: 100vw;
+  height: 100vh;
+  // margin-left: -388px !important;
+}
